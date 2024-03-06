@@ -3,26 +3,20 @@
 html {
     font-family: 'Nunito', sans-serif;
     font-size: 22px;
-    color: #fff;
+
 }
 
-.register body {
-    min-height: 100vh;
-    background-color: dodgerblue;
-}
 
 .register {
-    display: flex;
-    flex-direction: column;
+    align-content: center;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1rem 0.5rem;
-    background-color: dodgerblue;
+    display: flex;
+    padding: 0.25rem 0.5rem;
 }
 
 section {
     width: 100%;
+
     max-width: 420px;
     min-height: 400px;
     display: flex;
@@ -32,12 +26,11 @@ section {
     background-color: rgba(0,0,0,0.4);
 }
 
-register form {
+.register form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     flex-grow: 1;
-    padding-bottom: 1rem;
 }
 
 a, a:visited {
@@ -55,13 +48,21 @@ textarea {
 }
 
 label,
-button {
+.buttonsir {
     margin-top: 1rem;
 }
-
-button {
-    padding: 0.5rem;
+.buttonsir{
+    background-color: #212529;
+    color: #fff;
+    border-radius: 5px;
+    border: white;
+    margin-left: 1rem;
+    transform: translate3d(-11px ,-10px, 0px);
 }
+.buttonsir:hover{
+    opacity: 80%;
+}
+
 
 .instructions {
     font-size: 0.75rem;

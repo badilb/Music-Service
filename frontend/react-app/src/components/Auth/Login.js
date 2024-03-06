@@ -22,9 +22,6 @@ const Login = () => {
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
 
     useEffect(() => {
         setErrMsg('');
@@ -59,7 +56,6 @@ const Login = () => {
             } else {
                 setErrMsg('Login Failed');
             }
-            errRef.current.focus();
         }
     }
 
@@ -89,7 +85,7 @@ const Login = () => {
                             value={pwd}
                             required
                         />
-                        <button>Sign In</button>
+                        <button className={"buttonsir"}>Sign In</button>
                     </form>
                     <p>
                         Need an Account?<br />

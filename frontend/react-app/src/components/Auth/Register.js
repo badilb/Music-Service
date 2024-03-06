@@ -27,9 +27,7 @@ const Register = () => {
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
+
 
     useEffect(() => {
         setValidName(USER_REGEX.test(user));
@@ -63,7 +61,6 @@ const Register = () => {
             );
             console.log({ user, pwd })
             console.log(response?.data);
-            console.log(response?.accessToken);
             console.log(JSON.stringify(response))
             setSuccess(true);
             //clear state and controlled inputs
@@ -79,7 +76,6 @@ const Register = () => {
             } else {
                 setErrMsg('Registration Failed')
             }
-            errRef.current.focus();
         }
     }
 
@@ -168,7 +164,7 @@ const Register = () => {
                             Must match the first password input field.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        <button disabled={!validName || !validPwd || !validMatch} className={"buttonsir"}>Sign Up</button>
                     </form>
                     <p>
                         Already registered?<br />

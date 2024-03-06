@@ -8,7 +8,6 @@ class Creator extends React.Component{
             <div>
 
                 <h1> Creator page </h1>
-                <Users />
 
             </div>
         )
