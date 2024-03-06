@@ -65,7 +65,7 @@ func (r *Routers) SetupRoutes(app *gin.Engine) {
 	app.NoRoute(func(c *gin.Context) {
 		// Checking that the requested path does not start with '/api' and does not apply to the API
 		if !strings.HasPrefix(c.Request.URL.Path, "/api") {
-			c.File("./web/dist/index.html")
+			c.File("./frontend/react-app/build/index.html")
 		}
 	})
 
