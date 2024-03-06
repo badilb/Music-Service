@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
-
+import { IoMdPerson } from "react-icons/io";
 import 'bootstrap/dist/css/bootstrap.min.css'
 class Navbar extends React.Component{
 
@@ -21,19 +21,18 @@ class Navbar extends React.Component{
                                     <NavLink to={"/"} className={"nav-link"}>Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to={"/profile"} className={"nav-link"}>Profile</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink to={"/login"} className={"nav-link"}>Login</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink to={"/creator"} className={"nav-link"}>Creator</NavLink>
+                                    <NavLink to={"/creator"} className={"nav-link"}>Add music</NavLink>
                                 </li>
 
                                 <form className="form-inline my-2 my-lg-0">
                                     <input className="form-control mr-sm-2" type="search" placeholder="Search"
                                            aria-label="Search"/>
                                 </form>
+                                <li className="nav-item">
+                                    <NavLink to={"/profile"} className={"nav-link"}>
+                                        <IoMdPerson/>
+                                    </NavLink>
+                                </li>
                             </ul>
                         </div>
                     </div>

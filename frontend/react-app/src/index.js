@@ -12,7 +12,9 @@ import {AuthProvider} from "./components/Auth/context/AuthProvider";
 import Unauthorized from "./components/Basic/Unauthorized";
 import RequireAuth from "./components/Basic/RequireAuth";
 import Creator from "./components/Creator";
-import MusicPlayer from "./components/Basic/MusicPlayer";
+import MusicPlayer from "./components/Basic/MusicPlayer/MusicPlayer";
+import MusicPlayer2 from "./components/Basic/MusicPlayer/MusicPlayer2";
+import {MusicPlayerProvider} from "./components/Basic/MusicPlayer/MusicProvider/MusicProvider";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -47,16 +49,18 @@ function Layout() {
 
                 <Outlet />
             </main>
-            <footer> <MusicPlayer /> </footer>
+            <footer> <MusicPlayer2 /> </footer>
         </div>
     );
 }
 
 root.render(
   <React.StrictMode>
-      <AuthProvider>
-          <RouterProvider router={router}/>
-      </AuthProvider>
+      <MusicPlayerProvider>
+          <AuthProvider>
+              <RouterProvider router={router}/>
+          </AuthProvider>
+      </MusicPlayerProvider>
   </React.StrictMode>
 );
 
