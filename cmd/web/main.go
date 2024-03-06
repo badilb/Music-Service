@@ -8,7 +8,7 @@ import (
 	"music-service-v2.0.0/internal/config"
 	"music-service-v2.0.0/internal/db"
 	"music-service-v2.0.0/internal/repository"
-	"music-service-v2.0.0/internal/rest/handlers"
+	handlers2 "music-service-v2.0.0/internal/rest/handlers"
 	"music-service-v2.0.0/internal/rest/routers"
 	"music-service-v2.0.0/pkg/compose"
 	"music-service-v2.0.0/pkg/logger"
@@ -99,9 +99,9 @@ func main() {
 	playlistRepo := repository.NewPlaylistRepository(dbInstance)
 	trackRepo := repository.NewTrackRepository(dbInstance)
 
-	authHandlers := handlers.NewAuthHandlers(userRepo, roleRepo)
-	playlistHandlers := handlers.NewPlaylistHandler(playlistRepo)
-	trackHandlers := handlers.NewTrackHandler(trackRepo, playlistRepo)
+	authHandlers := handlers2.NewAuthHandlers(userRepo, roleRepo)
+	playlistHandlers := handlers2.NewPlaylistHandler(playlistRepo)
+	trackHandlers := handlers2.NewTrackHandler(trackRepo, playlistRepo)
 
 	r := gin.Default()
 
