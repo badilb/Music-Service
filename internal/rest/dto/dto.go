@@ -1,8 +1,8 @@
 package dto
 
 type LoginForm struct {
-	Username string `json:"username"`
-	Password string `json:"password"`
+	Username string `json:"user"`
+	Password string `json:"pwd"`
 }
 
 type UpdateForm struct {
