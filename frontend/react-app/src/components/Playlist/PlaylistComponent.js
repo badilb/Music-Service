@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../Auth/api/axios';
 import {Link} from 'react-router-dom'
 
-const PlaylistsURL = "/playlists"
+const PlaylistsURL = "/api/playlists"
 const PlaylistComponent = () => {
     const [playlists, setPlaylists] = useState([]);
 
@@ -12,7 +12,7 @@ const PlaylistComponent = () => {
         // Replace 'YOUR_API_URL' with the actual URL of your API
         axios.get(PlaylistsURL)
             .then(response => {
-                setPlaylists(response.data); // Assuming your API returns an array of playlists
+                setPlaylists(response); // Assuming your API returns an array of playlists
             })
             .catch(error => {
                 console.error('Error fetching playlists:', error);
@@ -24,14 +24,14 @@ const PlaylistComponent = () => {
             <h2>Playlists</h2>
             <div className="row">
                 {playlists.map(playlist => (
-                    <div key={playlist.id} className="col-md-4 mb-4">
+                    <div key={playlist.ID} className="col-md-4 mb-4">
                         <div className="card">
                             {/* Add more card styling based on your needs */}
-                            <img src={playlist.image} className="card-img-top" alt={playlist.name} />
+                            {/*<img src={playlislist.image} className="card-img-top" alt={playlist.Title} />*/}
                             <div className="card-body">
-                                <h5 className="card-title">{playlist.name}</h5>
-                                <p className="card-text">{playlist.description}</p>
-                                <Link to={`/playlist/${playlist.id}`} className="btn btn-primary">View Playlist</Link>
+                                <h5 className="card-title">{playlist.Title}</h5>
+                                {/*<p className="card-text">{playlist.description}</p>*/}
+                                <Link to={`/playlist/${playlist.ID}`} className="btn btn-primary">View Playlist</Link>
                             </div>
                         </div>
                     </div>
